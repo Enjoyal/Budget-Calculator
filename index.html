@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget calculator</title>
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+     <!-- JavaScript Bundle with Popper -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Orbitron:wght@400;500&family=Rubik+Microbe&display=swap');
+
+        header{
+           padding-top: 5px;
+           display: flex;
+           position: sticky;
+           top: 0px;
+           
+
+    
+        }
+        #heading{
+            /* font-family: 'Rubik Microbe', cursive; */
+            font-family: 'Orbitron', sans-serif;
+            margin-left: 10px;
+
+        }
+        /* .col-4{
+            min-width: 500px;
+        } */
+     </style>
+
+</head>
+
+<body class="bg-light">
+
+    <header class="bg-dark">
+        <nav class="navbar">
+        <div class="container-fluid text-light ">
+            <h3 id="heading">Budget Calculator</h3>
+             <img class="ms-2 mb-1 border-0 rounded-2"  src="./images/budget-line-icon-logo-illustration-free-vector.webp" alt="budget" width="50px" height="50px">
+            
+        </div>
+        </nav>
+      </header>
+    <!-- <h3 class="text-dark text-center mt-3 ">Budget calculator</h3><br> -->
+
+<div class="row mt-3">
+
+    <div class="col-4 pt-5 ps-5 container" style="min-width:500px;">
+        <div class="w-75  ms-5 bg-light border   p-4 rounded-3 mt-3 text-dark" style="box-shadow:0px 5px 15px rgba(0,0,0,0.5);">
+         <h3 class="text-success">User Info</h3>
+         
+            <input id="uname" class="form-control  mt-3  p-2" type="text" placeholder="Enter your name">
+            <input id="mIncome" class="form-control mt-2  p-2" type="text" placeholder="Enter monthly income">
+        </div>    
+    </div>
+
+    <div class="col-4 container mt-5  text-center  " style="min-width:350px;">
+        <div class="  bg-light border  pb-4  ps-5 pe-5 rounded-3" style="box-shadow:0px 5px 15px rgba(0,0,0,0.5);">
+            <h3 class="text-danger text-center mt-3">Expenses</h3><br>
+            <div><input id="rent" class="form-control mt-1  p-2 " type="text" placeholder="Room Rent"></div>
+            <div><input id="electric" class="form-control mt-2 p-2" type="text" placeholder="Electricity Bill"></div>
+            <div><input id="food" class="form-control mt-2  p-2" type="text" placeholder="Food"></div>
+            <div><input id="insurance" class="form-control mt-2 p-2" type="text" placeholder="Insurance"></div>
+
+            <div class="accordion container-fluid form-control  mt-2 p-2" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Others
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div><input id="expenseName" class="form-control mt-2 p-2" type="text" placeholder="Describe the name"></div>
+                        <div><input id="Price" class="form-control mt-2 p-2" type="number" placeholder="Price"></div>
+                       
+                        <div id="addOther"><button  onclick="add()" class="container-fluid btn btn-success mt-4 mb-3">+Add</button></div>
+                        <div>
+                            <table class="container-fluid  border border-3">
+                                <thead class="border border-3 " >
+                    
+                                <tr>
+                                    <th class=" border border-3 border-secondary">Expense Name</th>
+                                    <th class=" border border-3 border-secondary">Cost (Rs)</th>
+                                </tr>
+                    
+                                </thead>
+                    
+                                <tbody id="result2">
+
+                                </tbody>
+                            </table>
+                    
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+            <button onclick="budgetCalc()" class="container-fluid btn btn-primary  mt-4 mb-3">Submit</button>
+            
+            <div id="display" class=""> </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-4  pt-5 container" style="min-width:500px;">
+        <!-- <input id="searchId" class="form-control w-50 mt-5" type="text" placeholder="Enter id here"><br>
+        <button onclick="search()" class=" btn btn-primary mt-1  ">Search</button> -->
+
+        <div  class="w-75 bg-light border p-5 ms-5 rounded-3 mt-3 text-warning" style="box-shadow:0px 5px 15px rgba(0,0,0,0.5);">
+            <h3 class="text-primary">Balance</h3>
+           <p id="result"> Hit the submit button to see your Balance Amount!</p>
+         </div>
+    </div>
+
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
